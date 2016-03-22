@@ -209,6 +209,10 @@ public:
   // Config parameters of the OpenCL module.
   std::string opencl_device_ids;
 
+  // Config parameters of the Replication module.
+  std::string replication_hosts;
+  uint16_t replicator_port;
+
   // System parameters that are set while initializing modules.
   node_id network_id;
   proxy_registry* network_proxies;

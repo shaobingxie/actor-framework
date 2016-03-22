@@ -132,6 +132,7 @@ public:
       scheduler,
       middleman,
       opencl_manager,
+      replicator,
       riac_probe,
       num_ids
     };
@@ -238,6 +239,13 @@ public:
 
   /// Returns `true` if the opencl module is available, `false` otherwise.
   bool has_opencl_manager() const;
+
+  /// Returns the replicator instance from replication module.
+  /// @throws `std::logic_error` if module is not loaded.
+  replication::replicator& replicator() const;
+
+  /// Returns `true` if the replication module is available, `false` otherwise.
+  bool has_replicator() const;
 
   /// Returns `true` if the RIAC probe module is available, `false` otherwise.
   bool has_probe() const;
@@ -454,6 +462,7 @@ private:
   scoped_execution_unit dummy_execution_unit_;
   atom_value backend_name_;
   opencl::manager* opencl_manager_;
+  replication::replicator* replicator_;
   riac::probe* probe_;
   bool await_actors_before_shutdown_;
 };

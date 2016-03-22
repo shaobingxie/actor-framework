@@ -128,6 +128,14 @@ class manager;
 
 } // namespace opencl
 
+// -- Replication classes ------------------------------------------------------
+
+namespace replication {
+
+class replicator;
+
+} // namespace replication
+
 // -- RIAC classes -------------------------------------------------------------
 
 namespace riac {
